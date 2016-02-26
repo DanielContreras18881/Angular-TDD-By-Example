@@ -16,8 +16,8 @@ System.register(['./dollar'], function(exports_1, context_1) {
                 }
                 Money.prototype.equals = function (money) {
                     // Compare amount and types
-                    return this.amount === money.amount;
-                    this.constructor.name === money.constructor.name;
+                    return this.amount === money.amount &&
+                        this.constructor.name === money.constructor.name;
                 };
                 Money.dollar = function (amount) {
                     return new dollar_1.Dollar(amount);

@@ -10,7 +10,7 @@ export class Money {
 	equals(money: Money): boolean {
 
 		// Compare amount and types
-		return this.amount === money.amount;
+		return this.amount === money.amount &&
 			this.constructor.name === money.constructor.name;
 	}
 
