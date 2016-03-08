@@ -7,4 +7,8 @@ export class Franc extends Money implements DollarInterface {
 		return new Franc(this.amount * multiplier);
 	}
 
+	currency(): string {
+		return "CHF";
+	}
+
 }

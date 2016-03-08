@@ -41,6 +41,10 @@ System.register(['./dollar', './franc', './money'], function(exports_1, context_
                     expect(five.times(3).equals(new franc_1.Franc(15)))
                         .toBe(true);
                 });
+                it('can return its currency', function () {
+                    expect(money_1.Money.dollar(1).currency()).toBe("USD");
+                    // expect(Money.franc(1).currency()).toBe("CHF");
+                });
             });
         }
     }

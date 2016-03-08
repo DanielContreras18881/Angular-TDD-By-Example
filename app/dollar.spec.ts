@@ -39,4 +39,9 @@ describe('Dollar', ()=> {
 			.toBe(true);
 	})
 
+	it('can return its currency', () => {
+		expect(Money.dollar(1).currency()).toBe("USD");
+		// expect(Money.franc(1).currency()).toBe("CHF");
+	})
+
 });

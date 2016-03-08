@@ -1,5 +1,5 @@
 import {Dollar} from './dollar';
-
+// import {Franc} from './franc';
 
 export class Money {
 
@@ -18,8 +18,16 @@ export class Money {
 		return new Dollar(amount);
 	}
 
+	// static franc(amount: number): Franc {
+	// 	return new Franc(amount);
+	// }
+
 	times(multiplier: number): Money {
 		return new Money(0);
+	}
+
+	currency(): string {
+
 	}
 
 }

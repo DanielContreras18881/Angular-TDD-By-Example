@@ -9,6 +9,7 @@ System.register(['./dollar'], function(exports_1, context_1) {
                 dollar_1 = dollar_1_1;
             }],
         execute: function() {
+            // import {Franc} from './franc';
             Money = (function () {
                 function Money(amount) {
                     this.amount = amount;
@@ -22,8 +23,13 @@ System.register(['./dollar'], function(exports_1, context_1) {
                 Money.dollar = function (amount) {
                     return new dollar_1.Dollar(amount);
                 };
+                // static franc(amount: number): Franc {
+                // 	return new Franc(amount);
+                // }
                 Money.prototype.times = function (multiplier) {
                     return new Money(0);
+                };
+                Money.prototype.currency = function () {
                 };
                 return Money;
             }());

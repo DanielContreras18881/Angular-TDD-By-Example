@@ -22,6 +22,9 @@ System.register(['./money'], function(exports_1, context_1) {
                 Dollar.prototype.times = function (multiplier) {
                     return new Dollar(this.amount * multiplier);
                 };
+                Dollar.prototype.currency = function () {
+                    return "USD";
+                };
                 return Dollar;
             }(money_1.Money));
             exports_1("Dollar", Dollar);

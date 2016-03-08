@@ -22,6 +22,9 @@ System.register(['./money'], function(exports_1, context_1) {
                 Franc.prototype.times = function (multiplier) {
                     return new Franc(this.amount * multiplier);
                 };
+                Franc.prototype.currency = function () {
+                    return "CHF";
+                };
                 return Franc;
             }(money_1.Money));
             exports_1("Franc", Franc);
