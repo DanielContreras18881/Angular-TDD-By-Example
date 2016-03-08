@@ -1,15 +1,12 @@
-System.register(['./dollar'], function(exports_1, context_1) {
+// import {Franc} from './franc';
+// import {Dollar} from './dollar';
+System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var dollar_1;
     var Money;
     return {
-        setters:[
-            function (dollar_1_1) {
-                dollar_1 = dollar_1_1;
-            }],
+        setters:[],
         execute: function() {
-            // import {Franc} from './franc';
             Money = (function () {
                 function Money(amount) {
                     this.amount = amount;
@@ -20,16 +17,18 @@ System.register(['./dollar'], function(exports_1, context_1) {
                     return this.amount === money.amount &&
                         this.constructor.name === money.constructor.name;
                 };
-                Money.dollar = function (amount) {
-                    return new dollar_1.Dollar(amount);
-                };
-                // static franc(amount: number): Franc {
+                // static dollar(amount: number): Dollar {
+                // 	return new Dollar(amount);
+                // }
+                // static franc(amount: number) {
+                // 	console.log(new Franc(amount));
                 // 	return new Franc(amount);
                 // }
                 Money.prototype.times = function (multiplier) {
                     return new Money(0);
                 };
-                Money.prototype.currency = function () {
+                Money.prototype.getCurrency = function () {
+                    return this.currency;
                 };
                 return Money;
             }());

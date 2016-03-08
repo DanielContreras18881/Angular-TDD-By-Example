@@ -1,7 +1,10 @@
-import {Dollar} from './dollar';
 // import {Franc} from './franc';
+// import {Dollar} from './dollar';
+
 
 export class Money {
+
+	public currency: string;
 
 	constructor(public amount: number) {
 		this.amount = amount;
@@ -14,11 +17,12 @@ export class Money {
 			this.constructor.name === money.constructor.name;
 	}
 
-	static dollar(amount: number): Dollar {
-		return new Dollar(amount);
-	}
+	// static dollar(amount: number): Dollar {
+	// 	return new Dollar(amount);
+	// }
 
-	// static franc(amount: number): Franc {
+	// static franc(amount: number) {
+	// 	console.log(new Franc(amount));
 	// 	return new Franc(amount);
 	// }
 
@@ -26,8 +30,9 @@ export class Money {
 		return new Money(0);
 	}
 
-	currency(): string {
 
+	getCurrency(): string {
+		return this.currency;
 	}
 
 }

@@ -16,14 +16,12 @@ System.register(['./money'], function(exports_1, context_1) {
         execute: function() {
             Dollar = (function (_super) {
                 __extends(Dollar, _super);
-                function Dollar() {
-                    _super.apply(this, arguments);
+                function Dollar(amount) {
+                    _super.call(this, amount);
+                    this.currency = "USD";
                 }
                 Dollar.prototype.times = function (multiplier) {
                     return new Dollar(this.amount * multiplier);
-                };
-                Dollar.prototype.currency = function () {
-                    return "USD";
                 };
                 return Dollar;
             }(money_1.Money));

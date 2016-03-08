@@ -5,18 +5,18 @@ import {Money} from './money';
 describe('Dollar', ()=> {
 
 	it('can multiply dollars', () => {
-		var five:Money = Money.dollar(5);
-		expect(five.times(2).equals(Money.dollar(10)))
+		var five:Money = new Dollar(5);
+		expect(five.times(2).equals(new Dollar(10)))
 			.toBe(true);
-		expect(five.times(3).equals(Money.dollar(15)))
+		expect(five.times(3).equals(new Dollar(15)))
 			.toBe(true);
 	})
 
 	it('can check equality', () => {
-		expect(Money.dollar(5).equals(Money.dollar(5)))
+		expect(new Dollar(5).equals(new Dollar(5)))
 			.toBe(true);
 
-		expect(Money.dollar(5).equals(Money.dollar(6)))
+		expect(new Dollar(5).equals(new Dollar(6)))
 			.toBe(false);
 
 		expect(new Franc(5).equals(new Franc(5)))
@@ -40,8 +40,8 @@ describe('Dollar', ()=> {
 	})
 
 	it('can return its currency', () => {
-		expect(Money.dollar(1).currency()).toBe("USD");
-		// expect(Money.franc(1).currency()).toBe("CHF");
+		expect(new Dollar(1).getCurrency()).toBe("USD");
+		expect(new Franc(1).getCurrency()).toBe("CHF");
 	})
 
 });

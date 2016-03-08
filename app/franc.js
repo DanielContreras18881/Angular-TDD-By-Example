@@ -16,14 +16,12 @@ System.register(['./money'], function(exports_1, context_1) {
         execute: function() {
             Franc = (function (_super) {
                 __extends(Franc, _super);
-                function Franc() {
-                    _super.apply(this, arguments);
+                function Franc(amount) {
+                    _super.call(this, amount);
+                    this.currency = "CHF";
                 }
                 Franc.prototype.times = function (multiplier) {
                     return new Franc(this.amount * multiplier);
-                };
-                Franc.prototype.currency = function () {
-                    return "CHF";
                 };
                 return Franc;
             }(money_1.Money));
