@@ -1,7 +1,7 @@
-System.register(['./dollar', './franc'], function(exports_1, context_1) {
+System.register(['./dollar', './franc', './money'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var dollar_1, franc_1;
+    var dollar_1, franc_1, money_1;
     return {
         setters:[
             function (dollar_1_1) {
@@ -9,6 +9,9 @@ System.register(['./dollar', './franc'], function(exports_1, context_1) {
             },
             function (franc_1_1) {
                 franc_1 = franc_1_1;
+            },
+            function (money_1_1) {
+                money_1 = money_1_1;
             }],
         execute: function() {
             describe('Dollar', function () {
@@ -41,6 +44,9 @@ System.register(['./dollar', './franc'], function(exports_1, context_1) {
                 it('can return its currency', function () {
                     expect(new dollar_1.Dollar(1).getCurrency()).toBe("USD");
                     expect(new franc_1.Franc(1).getCurrency()).toBe("CHF");
+                });
+                it('can compare between classes', function () {
+                    expect(new money_1.Money(10, "CHF").equals(new franc_1.Franc(10))).toBe(true);
                 });
             });
         }

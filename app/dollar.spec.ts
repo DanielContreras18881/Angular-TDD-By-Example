@@ -44,4 +44,8 @@ describe('Dollar', ()=> {
 		expect(new Franc(1).getCurrency()).toBe("CHF");
 	})
 
+	it('can compare between classes', () => {
+		expect(new Money(10, "CHF").equals(new Franc(10))).toBe(true);
+	}
+
 });

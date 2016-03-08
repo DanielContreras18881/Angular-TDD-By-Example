@@ -17,12 +17,8 @@ System.register(['./money'], function(exports_1, context_1) {
             Franc = (function (_super) {
                 __extends(Franc, _super);
                 function Franc(amount) {
-                    _super.call(this, amount);
-                    this.currency = "CHF";
+                    _super.call(this, amount, "CHF");
                 }
-                Franc.prototype.times = function (multiplier) {
-                    return new Franc(this.amount * multiplier);
-                };
                 return Franc;
             }(money_1.Money));
             exports_1("Franc", Franc);

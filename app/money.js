@@ -8,14 +8,14 @@ System.register([], function(exports_1, context_1) {
         setters:[],
         execute: function() {
             Money = (function () {
-                function Money(amount) {
+                function Money(amount, currency) {
                     this.amount = amount;
-                    this.amount = amount;
+                    this.currency = currency;
                 }
                 Money.prototype.equals = function (money) {
                     // Compare amount and types
                     return this.amount === money.amount &&
-                        this.constructor.name === money.constructor.name;
+                        this.getCurrency() === money.getCurrency();
                 };
                 // static dollar(amount: number): Dollar {
                 // 	return new Dollar(amount);
@@ -25,7 +25,7 @@ System.register([], function(exports_1, context_1) {
                 // 	return new Franc(amount);
                 // }
                 Money.prototype.times = function (multiplier) {
-                    return new Money(0);
+                    return new Money(this.amount * multiplier, this.currency);
                 };
                 Money.prototype.getCurrency = function () {
                     return this.currency;

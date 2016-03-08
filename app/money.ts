@@ -4,17 +4,14 @@
 
 export class Money {
 
-	public currency: string;
-
-	constructor(public amount: number) {
-		this.amount = amount;
-	}
+	constructor(public amount: number, 
+				public currency: string) {}
 
 	equals(money: Money): boolean {
 
 		// Compare amount and types
 		return this.amount === money.amount &&
-			this.constructor.name === money.constructor.name;
+			this.getCurrency() === money.getCurrency();
 	}
 
 	// static dollar(amount: number): Dollar {
@@ -27,7 +24,7 @@ export class Money {
 	// }
 
 	times(multiplier: number): Money {
-		return new Money(0);
+		return new Money(this.amount * multiplier, this.currency);
 	}
 
 
