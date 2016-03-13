@@ -1,9 +1,13 @@
-System.register([], function(exports_1, context_1) {
+System.register(['./sum'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
+    var sum_1;
     var Money;
     return {
-        setters:[],
+        setters:[
+            function (sum_1_1) {
+                sum_1 = sum_1_1;
+            }],
         execute: function() {
             Money = (function () {
                 function Money(amount, currency) {
@@ -28,7 +32,10 @@ System.register([], function(exports_1, context_1) {
                     return this.currency;
                 };
                 Money.prototype.plus = function (addend) {
-                    return new Money(this.amount + addend.amount, this.currency);
+                    return new sum_1.Sum(this, addend);
+                };
+                Money.prototype.reduce = function (to) {
+                    return this;
                 };
                 return Money;
             }());

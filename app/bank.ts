@@ -1,8 +1,9 @@
 import {Money} from './money';
 import {Expression} from './expression';
+import {Sum} from './sum';
 
 export class Bank {
 	reduce(source: Expression, to: string): Money {
-		return Money.dollar(10);
+		return source.reduce(to);
 	}
 }

@@ -8,6 +8,7 @@ System.register([], function(exports_1, context_1) {
             Expression = (function () {
                 function Expression() {
                 }
+                Expression.prototype.reduce = function (to) { };
                 return Expression;
             }());
             exports_1("Expression", Expression);
