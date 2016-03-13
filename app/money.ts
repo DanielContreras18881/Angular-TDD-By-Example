@@ -1,6 +1,3 @@
-// import {Franc} from './franc';
-// import {Dollar} from './dollar';
-
 
 export class Money {
 
@@ -14,14 +11,13 @@ export class Money {
 			this.getCurrency() === money.getCurrency();
 	}
 
-	// static dollar(amount: number): Dollar {
-	// 	return new Dollar(amount);
-	// }
+	static dollar(amount: number): Money {
+		return new Money(amount, "USD");
+	}
 
-	// static franc(amount: number) {
-	// 	console.log(new Franc(amount));
-	// 	return new Franc(amount);
-	// }
+	static franc(amount: number): Money {
+		return new Money(amount, "CHF");
+	}
 
 	times(multiplier: number): Money {
 		return new Money(this.amount * multiplier, this.currency);

@@ -1,5 +1,3 @@
-// import {Franc} from './franc';
-// import {Dollar} from './dollar';
 System.register([], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
@@ -17,13 +15,12 @@ System.register([], function(exports_1, context_1) {
                     return this.amount === money.amount &&
                         this.getCurrency() === money.getCurrency();
                 };
-                // static dollar(amount: number): Dollar {
-                // 	return new Dollar(amount);
-                // }
-                // static franc(amount: number) {
-                // 	console.log(new Franc(amount));
-                // 	return new Franc(amount);
-                // }
+                Money.dollar = function (amount) {
+                    return new Money(amount, "USD");
+                };
+                Money.franc = function (amount) {
+                    return new Money(amount, "CHF");
+                };
                 Money.prototype.times = function (multiplier) {
                     return new Money(this.amount * multiplier, this.currency);
                 };
