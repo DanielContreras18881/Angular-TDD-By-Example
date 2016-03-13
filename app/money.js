@@ -27,6 +27,9 @@ System.register([], function(exports_1, context_1) {
                 Money.prototype.getCurrency = function () {
                     return this.currency;
                 };
+                Money.prototype.plus = function (addend) {
+                    return new Money(this.amount + addend.amount, this.currency);
+                };
                 return Money;
             }());
             exports_1("Money", Money);

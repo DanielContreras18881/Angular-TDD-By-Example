@@ -1,11 +1,11 @@
+import {Expression} from './expression';
 
-export class Money {
+export class Money implements Expression {
 
 	constructor(public amount: number, 
 				public currency: string) {}
 
 	equals(money: Money): boolean {
-
 		// Compare amount and types
 		return this.amount === money.amount &&
 			this.getCurrency() === money.getCurrency();
@@ -23,9 +23,12 @@ export class Money {
 		return new Money(this.amount * multiplier, this.currency);
 	}
 
-
 	getCurrency(): string {
 		return this.currency;
+	}
+
+	plus(addend: Money): Expression {
+		return new Money(this.amount + addend.amount, this.currency);
 	}
 
 }
