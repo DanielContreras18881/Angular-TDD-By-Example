@@ -1,2 +1,12 @@
 node_modules
 typings
+app/bank.js
+app/bank.js.map
+app/dollar.spec.js
+app/dollar.spec.js.map
+app/expression.js
+app/expression.js.map
+app/money.js
+app/money.js.map
+app/sum.js
+app/sum.js.map
