@@ -58,5 +58,14 @@ describe('Dollar', ()=> {
 		expect(Money.dollar(1).equals(result)).toBe(true);
 	});
 
+	it('can add money together from different currencies', () => {
+		var fiveBucks: Expression = Money.dollar(5);
+		var tenFrancs: Expression = Money.franc(10);
+		var bank: Bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		var result: Money = bank.reduce(fiveBucks.plus(tenFrancs), "USD")
+		expect(Money.dollar(10).equals(result)).toBe(true);
+
+	});
 
 });
