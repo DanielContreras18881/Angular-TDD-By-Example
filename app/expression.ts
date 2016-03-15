@@ -1,5 +1,6 @@
 import {Bank} from './bank';
 import {Money} from './money';
+import {Sum} from './sum';
 
 export class Expression {
 	reduce(bank: Bank, to: string): Money {
@@ -7,6 +8,10 @@ export class Expression {
 	}
 
 	plus(addend: Expression): Expression {
-		return new Expression();
+		return new Sum(this, addend);
+	}
+
+	times(multiplier: number): Expression {
+		return null;
 	}
 }

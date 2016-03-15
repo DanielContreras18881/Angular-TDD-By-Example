@@ -65,7 +65,27 @@ describe('Dollar', ()=> {
 		bank.addRate("CHF", "USD", 2);
 		var result: Money = bank.reduce(fiveBucks.plus(tenFrancs), "USD")
 		expect(Money.dollar(10).equals(result)).toBe(true);
-
 	});
 
+	it('can add sum to money', () => {
+		var fiveBucks: Expression = Money.dollar(5);
+		var tenFrancs: Expression = Money.franc(10);
+		var bank: Bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		var sum: Expression = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+		var result: Money = bank.reduce(sum, "USD");
+		expect(Money.dollar(15).equals(result)).toBe(true);
+	});
+
+	it('can multiply sums', () => {
+		var fiveBucks: Expression = Money.dollar(5);
+		var tenFrancs: Expression = Money.franc(10);
+		var bank: Bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		var sum: Expression = new Sum(fiveBucks, tenFrancs).times(2);
+		var result: Money = bank.reduce(sum, "USD");
+
+		expect(Money.dollar(20).equals(result)).toBe(true);
+	})
 });
+
