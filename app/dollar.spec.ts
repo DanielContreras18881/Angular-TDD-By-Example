@@ -50,4 +50,13 @@ describe('Dollar', ()=> {
 		expect(Money.dollar(1).equals(result)).toBe(true);
 	});
 
+
+	it('can reduce money from different currencies', () => {
+		var bank: Bank = new Bank();
+		bank.addRate("CHF", "USD", 2);
+		var result: Money = bank.reduce(Money.franc(2), "USD");
+		expect(Money.dollar(1).equals(result)).toBe(true);
+	});
+
+
 });

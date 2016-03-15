@@ -10,3 +10,5 @@ app/money.js
 app/money.js.map
 app/sum.js
 app/sum.js.map
+pair.js.map
+pair.ts
